@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-//import icon from "../img/user.png";
 
 const Dashboard = ({ auth: { user } }) => {
   return (
@@ -10,7 +9,7 @@ const Dashboard = ({ auth: { user } }) => {
     </div>
   );
 };
- 
+
 Dashboard.propTypes = {
   auth: PropTypes.object.isRequired,
 };

@@ -12,8 +12,8 @@ const Landing = ({ isAuthenticated }) => {
     <section className="landing">
       <div className="dark-overlay">
         <div className="landing-inner">
-          <h1>MERN Stack Project</h1>
-          <p>Register, Login &amp; Logout</p>
+          <h1>MERN Stack</h1>
+          <p>Register, Login</p>
           <br />
           <div className="buttons">
             <Link to="/register" className="btn">

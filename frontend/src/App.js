@@ -22,19 +22,18 @@ function App() {
   }, []);
 
   return (
-      <div className="App">
-        <Router>
-          <Navbar />
-          <Switch>
-            <Route exact path="/" component={Landing} />
-            <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            {/* <Route exact path="/dashboard" component={Dashboard} /> */}
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="" component={NotFound} />
-          </Switch>
-        </Router>
-      </div>
+    <div className="App">
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="" component={NotFound} />
+        </Switch>
+      </Router>
+    </div>
   );
 }
 

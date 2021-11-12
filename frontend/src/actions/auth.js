@@ -11,7 +11,6 @@ import {
 } from "./types";
 import setAuthToken from "../utils/setAuthToken";
 
-// Load User
 export const loadUser = () => async dispatch => {
   if (localStorage.token) {
     setAuthToken(localStorage.token);
@@ -30,7 +29,6 @@ export const loadUser = () => async dispatch => {
   }
 };
 
-// Register User
 export const register =
   ({ name, email, password }) =>
   async dispatch => {
@@ -44,14 +42,13 @@ export const register =
 
     try {
       const res = await axios.post("http://localhost:8000/users", body, config);
-        dispatch({
-          type: REGISTER_SUCCESS,
-          payload: res.data,
-        });
+      dispatch({
+        type: REGISTER_SUCCESS,
+        payload: res.data,
+      });
 
       dispatch(loadUser());
     } catch (err) {
-
       const errors = err.response.data.errors;
       if (errors) {
         errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
@@ -63,7 +60,6 @@ export const register =
     }
   };
 
-// Login User
 export const login = (email, password) => async dispatch => {
   const config = {
     headers: {
@@ -98,8 +94,6 @@ export const login = (email, password) => async dispatch => {
     });
   }
 };
-
-// Logout / Clear Profile
 
 export const logout = () => dispatch => {
   dispatch({ type: LOGOUT });
