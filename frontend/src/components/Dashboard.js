@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import PropTypes from "prop-types";
 
 const Dashboard = ({ auth: { user } }) => {
   const [userDetail, setUserDetail] = useState(false);
@@ -18,10 +17,6 @@ const Dashboard = ({ auth: { user } }) => {
       </div>}
     </div>
   );
-};
-
-Dashboard.propTypes = {
-  auth: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({

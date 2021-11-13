@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import { register } from "../../actions/auth";
-import PropTypes from "prop-types";
 import Alert from "../layout/Alert";
 import { setAlert } from "../../actions/alert";
 
@@ -86,12 +85,6 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
       </p>
     </div>
   );
-};
-
-Register.propTypes = {
-  setAlert: PropTypes.func.isRequired,
-  register: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.bool,
 };
 
 const mapStateToProps = state => ({
