@@ -6,7 +6,6 @@ const auth = require("../middlewares/auth");
 const { check, validationResult } = require("express-validator");
 const User = require("../models/User");
 
-
 var jwtSec = "mytoken";
 
 router.post(
@@ -40,7 +39,7 @@ router.post(
         });
       }
 
-      const salt = await bcrypt.genSalt(10); 
+      const salt = await bcrypt.genSalt(10);
 
       user.password = await bcrypt.hash(password, salt);
 
@@ -63,7 +62,6 @@ router.post(
   }
 );
 
-
 router.get("/auth", auth, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select("-password");
@@ -73,7 +71,6 @@ router.get("/auth", auth, async (req, res) => {
     res.status(500).send("Server Error");
   }
 });
-
 
 router.post(
   "/auth",
@@ -122,6 +119,5 @@ router.post(
     }
   }
 );
-
 
 module.exports = router;

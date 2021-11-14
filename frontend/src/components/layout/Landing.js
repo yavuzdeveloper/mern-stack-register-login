@@ -2,7 +2,6 @@ import React from "react";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
-
 const Landing = ({ isAuthenticated }) => {
   if (isAuthenticated) {
     return <Redirect to="/dashboard" />;
@@ -28,7 +27,6 @@ const Landing = ({ isAuthenticated }) => {
     </section>
   );
 };
-
 
 const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated,

@@ -64,7 +64,6 @@ const Login = ({ login, isAuthenticated }) => {
   );
 };
 
-
 const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated,
 });

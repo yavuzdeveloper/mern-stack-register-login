@@ -3,7 +3,6 @@ const jwt = require("jsonwebtoken");
 var jwtSec = "mytoken";
 
 module.exports = function (req, res, next) {
-
   const token = req.header("x-auth-token");
 
   if (!token) {
